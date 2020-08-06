@@ -1,6 +1,10 @@
 import sys
 import requests
-import json
+
+
+def get_user_data(json_file, argv):
+    print('User data')
+    pass
 
 
 def get_post_data(json_file, argv):
@@ -11,19 +15,25 @@ def get_post_data(json_file, argv):
     return print(comment)
 
 
-def request_json(argv):
+def request_json(argv, arg):
     request = requests.get(f'https://www.instagram.com/{argv}/?__a=1')
     if request.status_code == 404:
         print('Username is invalid')
     else:
         json_file = request.json()
-        return get_post_data(json_file, argv)
+        if arg == 'get_post_data':
+            return get_post_data(json_file, argv)
+        elif arg == 'get_user_data':
+            return get_user_data(json_file, argv)
+        else:
+            print('Wrong function input')
 
 
 def main(argv=None):
     if argv is None:
         argv = str(sys.argv[1])
-    request_json(argv)
+        arg = str(sys.argv[2])
+        request_json(argv, arg)
 
 
 if __name__ == '__main__':
