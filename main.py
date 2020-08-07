@@ -4,7 +4,10 @@ import requests
 
 def get_user_data(json_file, argv):
     print('User data')
-    pass
+    user_status = json_file['graphql']['user']['biography']
+    followers = json_file['graphql']['user']['edge_followed_by']['count']
+    posts_number = json_file['graphql']['user']['edge_owner_to_timeline_media']['count']
+    print(posts_number)
 
 
 def get_post_data(json_file, argv):
