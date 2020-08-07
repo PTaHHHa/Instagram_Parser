@@ -1,3 +1,5 @@
-# Instagram_Parser
+# Instagram Parser
 
 execute via command line - python main.py {username} { get_user_data/get_post_data }
+
+I will rewrite it later as Telegram bot.
