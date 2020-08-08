@@ -2,7 +2,7 @@ import requests
 from telegram.ext import Updater, CommandHandler
 """This is my script in form of Telegram Bot"""
 
-updater = Updater(token='1285701260:AAEFpFQ43WtA7lMEjyjBHhw0VwV5LxomeCU', use_context=True)
+updater = Updater(token='', use_context=True)
 dispatcher = updater.dispatcher
 
 
